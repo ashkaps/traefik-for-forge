@@ -17,7 +17,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./letsencrypt:/letsencrypt
-      - ./traefikapp.auth:/auth/traefikapp.auth
+      - ./traefik.auth:/auth/traefik.auth
     command:
       - --api.dashboard=true
       # Uncomment for debug
@@ -48,4 +48,4 @@ services:
       - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
 
       ## AUTH
-      - traefik.http.middlewares.auth.basicauth.usersfile=/auth/traefikapp.auth
+      - traefik.http.middlewares.auth.basicauth.usersfile=/auth/traefik.auth
