@@ -26,7 +26,7 @@ services:
       - --entrypoints.https.address=:443
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
-      - --certificatesresolvers.leresolver.acme.httpchallenge.entrypoint=web
+      - --certificatesresolvers.leresolver.acme.httpchallenge.entrypoint=http
       - --certificatesresolvers.leresolver.acme.storage=/letsencrypt/acme.json
       - --certificatesresolvers.leresolver.acme.email=${LETS_ENCRYPT_EMAIL}
     labels:
